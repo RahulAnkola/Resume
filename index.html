@@ -152,10 +152,10 @@
   .btn:hover .ar { transform: translate(3px, -3px); }
 
   /* ---------- section scaffolding ---------- */
-  section { padding: clamp(80px, 13vh, 150px) 0; border-top: 1px solid var(--line-strong); }
+  section { padding: clamp(90px, 13vh, 150px) 0 clamp(90px, 13vh, 150px); border-top: 1px solid var(--line-strong); }
   .sec-head {
     display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--col-gap);
-    align-items: baseline; margin-bottom: clamp(34px, 6vh, 72px);
+    align-items: baseline; margin-bottom: clamp(40px, 6vh, 80px);
   }
   .sec-num { grid-column: span 2; font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.06em; }
   .sec-title { grid-column: 3 / span 7; font-size: clamp(28px, 4.4vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 0.95; }
@@ -223,7 +223,7 @@
 
   /* ---------- EDUCATION + STATS ---------- */
   .edu-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--col-gap); }
-  .stats { grid-column: span 4; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: 30px; align-self: start; }
+  .stats { grid-column: span 4; grid-row: 1 / span 2; display: flex; flex-direction: column; justify-content: space-between; }
   .stat .num { font-size: clamp(48px, 7vw, 96px); font-weight: 700; letter-spacing: -0.04em; line-height: 0.9; }
   .stat .num .accent { color: var(--accent); }
   .stat .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 8px; }
@@ -238,6 +238,7 @@
   }
   .pub .ribbon { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
   .pub .title { font-size: 17px; font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; }
+  .pub a:hover .title { color: var(--accent); }
   .pub .doi { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); margin-top: 12px; }
   @media (max-width: 760px) { .stats { grid-column: span 12; flex-direction: row; flex-wrap: wrap; } .edu-list, .pub { grid-column: span 12; } }
 
@@ -357,7 +358,7 @@
       <span class="pmark"></span>
       <div class="proj-head"><div class="proj-name"><a href="https://waypoint-blush.vercel.app" target="_blank" rel="noopener" style="transition:color 0.3s ease;">Waypoint</a></div><div class="proj-date">2026</div></div>
       <p class="proj-desc">Full-stack road-trip planner — multi-stop routing, route alternatives &amp; drive-time estimates. Claude AI trip companion with live stop suggestions, deployed mobile-first on Vercel.</p>
-      <div class="proj-tags"><span class="tag">Next.js 15</span><span class="tag">Supabase</span><span class="tag">Maps API</span><span class="tag">Claude AI</span><a href="https://waypoint-blush.vercel.app" target="_blank" rel="noopener" class="tag" style="border-color:var(--accent);color:var(--accent);">Live ↗</a></div>
+      <div class="proj-tags"><span class="tag">Next.js 15</span><span class="tag">Supabase</span><span class="tag">Maps API</span><span class="tag">Gemini AI</span><a href="https://waypoint-blush.vercel.app" target="_blank" rel="noopener" class="tag" style="border-color:var(--accent);color:var(--accent);">Live ↗</a></div>
     </article>
 
     <article class="proj reveal">
@@ -469,7 +470,9 @@
 
     <div class="pub reveal">
       <div class="ribbon">● Publication — ACM</div>
-      <div class="title">Empowering Precision in Financial News: Editorial Classification through Cutting-Edge Natural Language Processing.</div>
+      <a href="https://dl.acm.org/doi/10.1145/3639233.3639343" target="_blank" rel="noopener" style="display:block; transition: color 0.2s ease;">
+        <div class="title" style="transition: color 0.2s ease;">Empowering Precision in Financial News: Editorial Classification through Cutting-Edge Natural Language Processing. ↗</div>
+      </a>
       <div class="doi">DOI: 10.1145/3639233.3639343 · 2024</div>
     </div>
   </div>
