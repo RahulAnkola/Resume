@@ -298,7 +298,7 @@
     <p class="hero-role">Engineer building <span class="em">full-stack products</span> and shipping <span class="em">on-chain</span> systems to production.</p>
     <div class="hero-cta">
       <a class="btn" href="Rahulkumar_Ankola_Resume.pdf" target="_blank" rel="noopener" data-hot>Download CV <span class="ar">↗</span></a>
-      <span class="scroll-cue"><span class="arrow">↓</span> Scroll — or press <b style="color:var(--accent)">G</b></span>
+      <span class="scroll-cue"><span class="arrow">↓</span> Scroll</span>
     </div>
   </div>
 </header>
@@ -541,7 +541,7 @@
     requestAnimationFrame(loop);
   }
   loop();
-  var hotSel = "a, button, .btn, .xp-row, .proj, .skill-group li, [data-hot]";
+  var hotSel = "a:not(#copy-email):not([href^='https://www.linkedin.com/in/']), .btn, .xp-row, .proj, .skill-group li, [data-hot]";
   document.addEventListener("mouseover", function (e) {
     if (e.target.closest(hotSel)) cursor.classList.add("hot");
   });
