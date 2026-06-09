@@ -182,6 +182,8 @@
   .xp-date { grid-column: 12 / span 1; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-align: right; letter-spacing: 0.02em; white-space: nowrap; }
   @media (max-width: 860px) {
     .xp-detail { display: none; }
+    .sec-meta { display: none; }
+    .sec-title { grid-column: 3 / span 10; }
   }
 
   /* ---------- PROJECTS ---------- */
@@ -240,8 +242,6 @@
   .pub .title { font-size: 17px; font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; }
   .pub a:hover .title { color: var(--accent); }
   .pub .doi { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); margin-top: 12px; }
-  @media (max-width: 760px) { .stats { grid-column: span 12; flex-direction: row; flex-wrap: wrap; } .edu-list, .pub { grid-column: span 12; } }
-
   /* ---------- FOOTER / CONTACT ---------- */
   .foot { padding-bottom: clamp(50px, 8vh, 90px); }
   .foot-cta { font-size: clamp(40px, 9vw, 150px); font-weight: 700; letter-spacing: -0.04em; line-height: 0.9; margin-bottom: clamp(30px, 6vh, 64px); }
@@ -255,7 +255,48 @@
   .foot-col a, .foot-col p { font-size: 15px; color: var(--ink-soft); display: block; line-height: 1.7; transition: color 0.2s ease; cursor: none; }
   .foot-col a:hover { color: var(--accent); }
   .foot-base { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; margin-top: 40px; flex-wrap: wrap; gap: 10px; }
-  @media (max-width: 760px) { .foot-col { grid-column: span 6; margin-bottom: 24px; } }
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    html, body { overflow-x: hidden; }
+
+    /* Hero top — 2×2 grid */
+    .hero-top { grid-template-columns: repeat(4, 1fr); }
+    .hero-top .k { grid-column: span 2; margin-bottom: 6px; }
+
+    /* Hero bottom — stack */
+    .hero-role { grid-column: span 12; }
+    .hero-cta { grid-column: span 12; margin-top: 20px; flex-direction: row; align-items: center; flex-wrap: wrap; }
+
+    /* Experience rows */
+    .xp-co { grid-column: span 9; font-size: clamp(18px, 5vw, 28px); }
+    .xp-role { grid-column: span 12; font-size: 14px; margin-top: 4px; }
+    .xp-date { grid-column: 10 / span 3; text-align: right; }
+
+    /* Projects — single column */
+    .proj { grid-column: span 12; }
+
+    /* Skills */
+    .skill-cols { grid-template-columns: 1fr; }
+    .skill-group { grid-column: span 12; }
+
+    /* Education */
+    .stats { grid-column: span 12; grid-row: auto; flex-direction: row; flex-wrap: wrap; gap: 20px; }
+    .stat { min-width: 80px; }
+    .edu-list, .pub { grid-column: span 12; }
+    .pub { margin-top: 20px; }
+
+    /* Footer */
+    .foot-col { grid-column: span 6; margin-bottom: 24px; }
+    .foot-cta { font-size: clamp(36px, 10vw, 80px); }
+  }
+
+  @media (max-width: 480px) {
+    /* Hero top — single column */
+    .hero-top .k { grid-column: span 4; }
+
+    /* Footer — single column */
+    .foot-col { grid-column: span 12; }
+  }
 
   /* ---------- toast for easter eggs ---------- */
   #toast { position: fixed; bottom: 24px; right: var(--gutter); z-index: 9500; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; background: var(--ink); color: var(--paper); padding: 12px 18px; opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease; pointer-events: none; }
